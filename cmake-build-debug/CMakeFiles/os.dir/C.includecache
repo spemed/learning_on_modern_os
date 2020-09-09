@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bytedance/c/os/data_race/cpu_busy.c
+pthread.h
+-
+cpu_busy.h
+/Users/bytedance/c/os/data_race/cpu_busy.h
+unistd.h
+-
+
+/Users/bytedance/c/os/data_race/cpu_busy.h
+stdio.h
+-
+
+/Users/bytedance/c/os/main.c
+stdio.h
+-
+pthread/0.hello_thread/hello_thread.h
+/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
+data_race/cpu_busy.h
+/Users/bytedance/c/os/data_race/cpu_busy.h
+
+/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.c
+hello_thread.h
+/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+
+/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
+
