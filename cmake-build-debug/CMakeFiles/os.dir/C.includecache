@@ -6,35 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/bytedance/c/os/data_race/cpu_busy.c
-pthread.h
+/Users/bytedance/c/os/ipc/share_memory.c
+zconf.h
 -
-cpu_busy.h
-/Users/bytedance/c/os/data_race/cpu_busy.h
-unistd.h
--
+share_memory.h
+/Users/bytedance/c/os/ipc/share_memory.h
 
-/Users/bytedance/c/os/data_race/cpu_busy.h
+/Users/bytedance/c/os/ipc/share_memory.h
+sys/ipc.h
+-
 stdio.h
 -
-
-/Users/bytedance/c/os/main.c
-stdio.h
+sys/shm.h
 -
-pthread/0.hello_thread/hello_thread.h
-/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
-data_race/cpu_busy.h
-/Users/bytedance/c/os/data_race/cpu_busy.h
-
-/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.c
-hello_thread.h
-/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
-stdio.h
--
-stdlib.h
--
-pthread.h
--
-
-/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
+string.h
+/Users/bytedance/c/os/ipc/string.h
 

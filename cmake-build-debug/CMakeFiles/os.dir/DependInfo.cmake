@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/bytedance/c/os/data_race/block.c" "/Users/bytedance/c/os/cmake-build-debug/CMakeFiles/os.dir/data_race/block.c.o"
   "/Users/bytedance/c/os/data_race/cpu_busy.c" "/Users/bytedance/c/os/cmake-build-debug/CMakeFiles/os.dir/data_race/cpu_busy.c.o"
+  "/Users/bytedance/c/os/ipc/share_memory.c" "/Users/bytedance/c/os/cmake-build-debug/CMakeFiles/os.dir/ipc/share_memory.c.o"
   "/Users/bytedance/c/os/main.c" "/Users/bytedance/c/os/cmake-build-debug/CMakeFiles/os.dir/main.c.o"
   "/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.c" "/Users/bytedance/c/os/cmake-build-debug/CMakeFiles/os.dir/pthread/0.hello_thread/hello_thread.c.o"
   )

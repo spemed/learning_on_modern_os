@@ -90,6 +90,12 @@
 		<Unit filename="/Users/bytedance/c/os/data_race/cpu_busy.h">
 			<Option target="os"/>
 		</Unit>
+		<Unit filename="/Users/bytedance/c/os/ipc/share_memory.c">
+			<Option target="os"/>
+		</Unit>
+		<Unit filename="/Users/bytedance/c/os/ipc/share_memory.h">
+			<Option target="os"/>
+		</Unit>
 		<Unit filename="/Users/bytedance/c/os/main.c">
 			<Option target="os"/>
 		</Unit>

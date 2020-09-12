@@ -177,6 +177,33 @@ data_race/cpu_busy.c.s:
 	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/cpu_busy.c.s
 .PHONY : data_race/cpu_busy.c.s
 
+ipc/share_memory.o: ipc/share_memory.c.o
+
+.PHONY : ipc/share_memory.o
+
+# target to build an object file
+ipc/share_memory.c.o:
+	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/ipc/share_memory.c.o
+.PHONY : ipc/share_memory.c.o
+
+ipc/share_memory.i: ipc/share_memory.c.i
+
+.PHONY : ipc/share_memory.i
+
+# target to preprocess a source file
+ipc/share_memory.c.i:
+	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/ipc/share_memory.c.i
+.PHONY : ipc/share_memory.c.i
+
+ipc/share_memory.s: ipc/share_memory.c.s
+
+.PHONY : ipc/share_memory.s
+
+# target to generate assembly for a file
+ipc/share_memory.c.s:
+	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/ipc/share_memory.c.s
+.PHONY : ipc/share_memory.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -246,6 +273,9 @@ help:
 	@echo "... data_race/cpu_busy.o"
 	@echo "... data_race/cpu_busy.i"
 	@echo "... data_race/cpu_busy.s"
+	@echo "... ipc/share_memory.o"
+	@echo "... ipc/share_memory.i"
+	@echo "... ipc/share_memory.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
