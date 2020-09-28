@@ -7,7 +7,7 @@
 #include "share_memory.h"
 #define PROJECT_ID 2020
 
-_Noreturn void read_from_share_memory() {
+void read_from_share_memory() {
 
     key_t key;
     key = ftok("./",PROJECT_ID); //根据文件路径+project_id用于构建不重复的key_t类型的返回值,提供进程唯一的标识符找到自己的共享内存段
@@ -32,13 +32,12 @@ _Noreturn void read_from_share_memory() {
     //  SHM_RDONLY：只读。
     //  SHM_RND：（shmaddr 非空时才有效）
     void *shm_read = shmat(shmid,NULL,SHM_RDONLY); //返回一个void*指针(已经完成映射，该指针指向共享内存段)
-
     counter read_counter;
     memcpy(&read_counter,shm_read,sizeof(counter));
     printf("current counter=%d\n",read_counter);
 }
 
-_Noreturn void write_from_share_memory() {
+void write_from_share_memory() {
 
     key_t key;
     key = ftok("./",PROJECT_ID); //根据文件路径+project_id用于构建不重复的key_t类型的返回值,提供进程唯一的标识符找到自己的共享内存段
@@ -47,7 +46,8 @@ _Noreturn void write_from_share_memory() {
     }
 
     //打开或者创建一个共享内存段
-    //IPC_CREAT--如果不存在该共享内存区段则创建,IPC_EXCL--如果存在该共享内存区段则报错
+    //IPC_CREAT--如果不存在该共享内存区段则创建
+    // IPC_EXCL--如果存在该共享内存区段则报错
     //0666 -- 共享内存的访问权限(可读可写)
     //返回共享内存段的id或者-1(表示获取失败) [可以理解为open函数,打开文件成功后返回文件句柄]
     int shmid = shmget(key,sizeof(counter),IPC_CREAT|0666);
@@ -63,9 +63,8 @@ _Noreturn void write_from_share_memory() {
     //  SHM_RDONLY：只读。
     //  SHM_RND：（shmaddr 非空时才有效）
     void *shm_write = shmat(shmid,NULL,0); //返回一个void*指针(已经完成映射，该指针指向共享内存段)
-    counter write_counter = 100;
+    counter write_counter = 1;
     memcpy(shm_write,&write_counter,sizeof(counter));
-    printf("current counter=%d\n",write_counter);
 }
 
 /**
@@ -77,6 +76,12 @@ _Noreturn void write_from_share_memory() {
  *   1.访问共享区域时需要加锁进行保护,控制临界区(多个进程写时需要使用信号量等手段进行控制)
  *   2.无法投递结构化的数据,本质上是对经过映射后的操作系统的共享内存段进行操作(用户进程中存在一个指针指向该段(保存了该段的地址？))
  *     代码可读性和维护上可能并不是很清晰
+ * 进程发生创建共享内存区的调用后,通过 ipcs -m 可以看到共享内存区的信息
+ *    IPC status from <running system> as of Sat Sep 12 23:45:39 CST 2020
+      T     ID     KEY        MODE       OWNER    GROUP
+      Shared Memory:
+      m 196608 0xe40434bc --rw-rw-rw- bytedance    staff
+ * 只要该缓冲区没有被ipcrm命令清除,则每一次对共享内存段的操作都会被记住(即使进程结束了,再次启动时也可以从共享内存中读到最后一次写入的数据)
  * 建议使用管道或者消息队列
  */
 void run_share_memory_demo() {

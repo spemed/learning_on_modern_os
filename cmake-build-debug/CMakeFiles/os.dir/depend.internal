@@ -11,10 +11,8 @@ CMakeFiles/os.dir/ipc/share_memory.c.o
  /Users/bytedance/c/os/ipc/share_memory.c
  /Users/bytedance/c/os/ipc/share_memory.h
 CMakeFiles/os.dir/main.c.o
- /Users/bytedance/c/os/data_race/cpu_busy.h
  /Users/bytedance/c/os/ipc/share_memory.h
  /Users/bytedance/c/os/main.c
- /Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h
 CMakeFiles/os.dir/pthread/0.hello_thread/hello_thread.c.o
  /Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.c
  /Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h

@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="os">
-				<Option output="/Users/bytedance/c/os/cmake-build-debug/os" prefix_auto="0" extension_auto="0"/>
+			<Target title="main.c">
+				<Option output="/Users/bytedance/c/os/cmake-build-debug/main.c" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/bytedance/c/os/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -51,14 +51,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 os"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.c"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="os/fast">
-				<Option output="/Users/bytedance/c/os/cmake-build-debug/os" prefix_auto="0" extension_auto="0"/>
+			<Target title="main.c/fast">
+				<Option output="/Users/bytedance/c/os/cmake-build-debug/main.c" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/bytedance/c/os/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -71,7 +71,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 os/fast"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.c/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bytedance/c/os/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -79,31 +79,43 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/bytedance/c/os/data_race/block.c">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/data_race/block.h">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/data_race/cpu_busy.c">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/data_race/cpu_busy.h">
-			<Option target="os"/>
+			<Option target="main.c"/>
+		</Unit>
+		<Unit filename="/Users/bytedance/c/os/ipc/anonymous_pipe.c">
+			<Option target="main.c"/>
+		</Unit>
+		<Unit filename="/Users/bytedance/c/os/ipc/anonymous_pipe.h">
+			<Option target="main.c"/>
+		</Unit>
+		<Unit filename="/Users/bytedance/c/os/ipc/semaphore.c">
+			<Option target="main.c"/>
+		</Unit>
+		<Unit filename="/Users/bytedance/c/os/ipc/semaphore.h">
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/ipc/share_memory.c">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/ipc/share_memory.h">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/main.c">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.c">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/pthread/0.hello_thread/hello_thread.h">
-			<Option target="os"/>
+			<Option target="main.c"/>
 		</Unit>
 		<Unit filename="/Users/bytedance/c/os/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

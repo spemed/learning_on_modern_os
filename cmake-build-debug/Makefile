@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named os
+# Target rules for targets named main.c
 
 # Build rule for target.
-os: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 os
-.PHONY : os
+main.c: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main.c
+.PHONY : main.c
 
 # fast build rule for target.
-os/fast:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/build
-.PHONY : os/fast
+main.c/fast:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/build
+.PHONY : main.c/fast
 
 data_race/block.o: data_race/block.c.o
 
@@ -129,7 +129,7 @@ data_race/block.o: data_race/block.c.o
 
 # target to build an object file
 data_race/block.c.o:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/block.c.o
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/data_race/block.c.o
 .PHONY : data_race/block.c.o
 
 data_race/block.i: data_race/block.c.i
@@ -138,7 +138,7 @@ data_race/block.i: data_race/block.c.i
 
 # target to preprocess a source file
 data_race/block.c.i:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/block.c.i
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/data_race/block.c.i
 .PHONY : data_race/block.c.i
 
 data_race/block.s: data_race/block.c.s
@@ -147,7 +147,7 @@ data_race/block.s: data_race/block.c.s
 
 # target to generate assembly for a file
 data_race/block.c.s:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/block.c.s
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/data_race/block.c.s
 .PHONY : data_race/block.c.s
 
 data_race/cpu_busy.o: data_race/cpu_busy.c.o
@@ -156,7 +156,7 @@ data_race/cpu_busy.o: data_race/cpu_busy.c.o
 
 # target to build an object file
 data_race/cpu_busy.c.o:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/cpu_busy.c.o
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/data_race/cpu_busy.c.o
 .PHONY : data_race/cpu_busy.c.o
 
 data_race/cpu_busy.i: data_race/cpu_busy.c.i
@@ -165,7 +165,7 @@ data_race/cpu_busy.i: data_race/cpu_busy.c.i
 
 # target to preprocess a source file
 data_race/cpu_busy.c.i:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/cpu_busy.c.i
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/data_race/cpu_busy.c.i
 .PHONY : data_race/cpu_busy.c.i
 
 data_race/cpu_busy.s: data_race/cpu_busy.c.s
@@ -174,8 +174,62 @@ data_race/cpu_busy.s: data_race/cpu_busy.c.s
 
 # target to generate assembly for a file
 data_race/cpu_busy.c.s:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/data_race/cpu_busy.c.s
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/data_race/cpu_busy.c.s
 .PHONY : data_race/cpu_busy.c.s
+
+ipc/anonymous_pipe.o: ipc/anonymous_pipe.c.o
+
+.PHONY : ipc/anonymous_pipe.o
+
+# target to build an object file
+ipc/anonymous_pipe.c.o:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/anonymous_pipe.c.o
+.PHONY : ipc/anonymous_pipe.c.o
+
+ipc/anonymous_pipe.i: ipc/anonymous_pipe.c.i
+
+.PHONY : ipc/anonymous_pipe.i
+
+# target to preprocess a source file
+ipc/anonymous_pipe.c.i:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/anonymous_pipe.c.i
+.PHONY : ipc/anonymous_pipe.c.i
+
+ipc/anonymous_pipe.s: ipc/anonymous_pipe.c.s
+
+.PHONY : ipc/anonymous_pipe.s
+
+# target to generate assembly for a file
+ipc/anonymous_pipe.c.s:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/anonymous_pipe.c.s
+.PHONY : ipc/anonymous_pipe.c.s
+
+ipc/semaphore.o: ipc/semaphore.c.o
+
+.PHONY : ipc/semaphore.o
+
+# target to build an object file
+ipc/semaphore.c.o:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/semaphore.c.o
+.PHONY : ipc/semaphore.c.o
+
+ipc/semaphore.i: ipc/semaphore.c.i
+
+.PHONY : ipc/semaphore.i
+
+# target to preprocess a source file
+ipc/semaphore.c.i:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/semaphore.c.i
+.PHONY : ipc/semaphore.c.i
+
+ipc/semaphore.s: ipc/semaphore.c.s
+
+.PHONY : ipc/semaphore.s
+
+# target to generate assembly for a file
+ipc/semaphore.c.s:
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/semaphore.c.s
+.PHONY : ipc/semaphore.c.s
 
 ipc/share_memory.o: ipc/share_memory.c.o
 
@@ -183,7 +237,7 @@ ipc/share_memory.o: ipc/share_memory.c.o
 
 # target to build an object file
 ipc/share_memory.c.o:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/ipc/share_memory.c.o
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/share_memory.c.o
 .PHONY : ipc/share_memory.c.o
 
 ipc/share_memory.i: ipc/share_memory.c.i
@@ -192,7 +246,7 @@ ipc/share_memory.i: ipc/share_memory.c.i
 
 # target to preprocess a source file
 ipc/share_memory.c.i:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/ipc/share_memory.c.i
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/share_memory.c.i
 .PHONY : ipc/share_memory.c.i
 
 ipc/share_memory.s: ipc/share_memory.c.s
@@ -201,7 +255,7 @@ ipc/share_memory.s: ipc/share_memory.c.s
 
 # target to generate assembly for a file
 ipc/share_memory.c.s:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/ipc/share_memory.c.s
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/ipc/share_memory.c.s
 .PHONY : ipc/share_memory.c.s
 
 main.o: main.c.o
@@ -210,7 +264,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/main.c.o
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -219,7 +273,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/main.c.i
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -228,7 +282,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/main.c.s
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/main.c.s
 .PHONY : main.c.s
 
 pthread/0.hello_thread/hello_thread.o: pthread/0.hello_thread/hello_thread.c.o
@@ -237,7 +291,7 @@ pthread/0.hello_thread/hello_thread.o: pthread/0.hello_thread/hello_thread.c.o
 
 # target to build an object file
 pthread/0.hello_thread/hello_thread.c.o:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/pthread/0.hello_thread/hello_thread.c.o
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/pthread/0.hello_thread/hello_thread.c.o
 .PHONY : pthread/0.hello_thread/hello_thread.c.o
 
 pthread/0.hello_thread/hello_thread.i: pthread/0.hello_thread/hello_thread.c.i
@@ -246,7 +300,7 @@ pthread/0.hello_thread/hello_thread.i: pthread/0.hello_thread/hello_thread.c.i
 
 # target to preprocess a source file
 pthread/0.hello_thread/hello_thread.c.i:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/pthread/0.hello_thread/hello_thread.c.i
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/pthread/0.hello_thread/hello_thread.c.i
 .PHONY : pthread/0.hello_thread/hello_thread.c.i
 
 pthread/0.hello_thread/hello_thread.s: pthread/0.hello_thread/hello_thread.c.s
@@ -255,7 +309,7 @@ pthread/0.hello_thread/hello_thread.s: pthread/0.hello_thread/hello_thread.c.s
 
 # target to generate assembly for a file
 pthread/0.hello_thread/hello_thread.c.s:
-	$(MAKE) -f CMakeFiles/os.dir/build.make CMakeFiles/os.dir/pthread/0.hello_thread/hello_thread.c.s
+	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/pthread/0.hello_thread/hello_thread.c.s
 .PHONY : pthread/0.hello_thread/hello_thread.c.s
 
 # Help Target
@@ -266,13 +320,19 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... os"
+	@echo "... main.c"
 	@echo "... data_race/block.o"
 	@echo "... data_race/block.i"
 	@echo "... data_race/block.s"
 	@echo "... data_race/cpu_busy.o"
 	@echo "... data_race/cpu_busy.i"
 	@echo "... data_race/cpu_busy.s"
+	@echo "... ipc/anonymous_pipe.o"
+	@echo "... ipc/anonymous_pipe.i"
+	@echo "... ipc/anonymous_pipe.s"
+	@echo "... ipc/semaphore.o"
+	@echo "... ipc/semaphore.i"
+	@echo "... ipc/semaphore.s"
 	@echo "... ipc/share_memory.o"
 	@echo "... ipc/share_memory.i"
 	@echo "... ipc/share_memory.s"

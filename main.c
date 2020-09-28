@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include "pthread/0.hello_thread/hello_thread.h"
-#include "data_race/cpu_busy.h"
-#include "ipc/share_memory.h"
 
-int main() {
-    run_share_memory_demo();
+#include "ipc/anonymous_pipe.h"
+#include "ipc/semaphore.h"
+
+int main(int argc,char *argv[])
+{
+    semaphore_demo();
     return 0;
 }
