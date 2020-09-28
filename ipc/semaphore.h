@@ -4,7 +4,8 @@
 
 #ifndef OS_SEMAPHORE_H
 #define OS_SEMAPHORE_H
-#include "sys/sem.h"
 #include <semaphore.h>
+#include <stdio.h>
+#include <stdlib.h>
 void semaphore_demo();
 #endif //OS_SEMAPHORE_H
