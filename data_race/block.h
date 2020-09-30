@@ -7,11 +7,18 @@
 // 这样可以大大提升cpu的利用率
 // 基于这个思路,又有几种解法
 //   1.基于信号 (基于异步的ipc,但是信号可能会丢失)
-//   2.基于信号量 （基于同步目的的ipc,存储在操作系统的共享区中,跨进程也可以访问）
+//   2.基于信号量 （基于同步目的的ipc,信号量存储在操作系统的共享区域/共享文件中(有system V和posix V),跨进程也可以访问）
 //   3.互斥量和条件变量(主要用于线程的同步)
-//
+//   基于信号量的在ipc的semaphore有涉及,这里展示使用pthread实现线程同步的样例
 
 #ifndef OS_BLOCK_H
 #define OS_BLOCK_H
 
+#include <zconf.h>
+#include <pthread.h>
+#include <stdio.h>
+
+static void* product(void*);
+static void* consume(void*);
+void product_consume_demo(void);
 #endif //OS_BLOCK_H

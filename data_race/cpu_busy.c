@@ -51,8 +51,9 @@ int _count = 0;
 _Noreturn void* get_lock_for_progress_a() {
     while (1) {
         while (LOCK == lock);
-        printf("current progress=a,enter region\n");
         //临界区开始
+        lock = LOCK;
+        printf("current progress=a,enter region\n");
         ++_count;
         //临界区域结束
         lock = UNLOCK;
@@ -63,6 +64,7 @@ _Noreturn void* get_lock_for_progress_a() {
 _Noreturn void* get_lock_for_progress_b() {
     while (1) {
         while (LOCK == lock);
+        lock = LOCK;
         printf("current progress=b,enter region\n");
         //临界区开始
         ++_count;

@@ -1,8 +1,9 @@
 
 #include "ipc/semaphore.h"
+#include "data_race/block.h"
 
 int main(int argc,char *argv[])
 {
-    semaphore_demo();
+    product_consume_demo();
     return 0;
 }
