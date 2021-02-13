@@ -1,9 +1,6 @@
 //
 // Created by bytedance on 2020/11/2.
 //
-
-
-
 #include <zconf.h>
 #include "signal.h"
 #include <unistd.h>
