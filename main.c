@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "ipc/philosopher.h"
 
 int main() {

@@ -8,6 +8,10 @@
 #define LEFT(i) i
 #define RIGHT(i) ((i+1)%(PEOPLE))
 
+#define THINKING 0
+#define EATING 1
+#define HUNGRY 2
+
 void run();
 #define OS_PHILOSOPHER_H
 
