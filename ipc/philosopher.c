@@ -41,22 +41,29 @@ static void test(int i) {
 }
 
 //获取叉子
-void get_fork(int i) {
-    state[i] = HUNGRY;
+void take_fork(int i) {
+    //互斥锁,因为存在竞争关系，put_forks时可能会被其他哲学家进行修改
     sem_wait(mutex);
+    //先把自己的状态标记为HUNGRY
+    state[i] = HUNGRY;
     test(i);
     sem_post(mutex);
-    //
+    //获取不到左叉子则一直等待
+    //只要哲学家取得左叉子,则其左右两侧的哲学家都会因为当前哲学家的状态为EATING而等待取得各自的左叉子
+    //则当前哲学家一定可以取得其右侧的叉子,保证完成进餐
     sem_wait(N[i]);
 }
 
 //放下叉子
 void put_fork(int i) {
+    //互斥锁,因为存在竞争关系，put_forks时可能会被其他哲学家进行修改
+    sem_wait(mutex);
     state[i] = THINKING;
-    //放下左手的叉子
-    sem_post(N[LEFT(i)]);
-    //放下右手的叉子
-    sem_post(N[RIGHT(i)]);
+    //测试左边的哲学家是否可以吃饭
+    test(LEFT(i));
+    //测试右边的哲学家是否可以吃饭
+    test(RIGHT(i));
+    sem_post(mutex);
 }
 
 
@@ -70,13 +77,13 @@ void put_fork(int i) {
     //todo 解决i重复的问题
     printf("i am the %d philosopher, i am thinking\n",number);
     while (1) {
-        get_fork(number);
+        take_fork(number);
         printf("i am the %d philosopher, i am eating\n",number);
         put_fork(number);
     }
 }
 
-
+//todo 尝试将其可视化
 _Noreturn void run() {
     sem_unlink("philosopher_mutex");
     mutex = sem_open("philosopher_mutex",O_CREAT,0666,1);
